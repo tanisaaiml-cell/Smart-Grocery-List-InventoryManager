@@ -19,7 +19,7 @@ const AuthPage = ({ mode }) => {
       else await register(form);
       navigate("/dashboard");
     } catch (err) {
-      setError(err.response?.data?.message || "Something went wrong. Check backend and MongoDB.");
+      setError(err.response?.data?.message || "Something went wrong.");
     } finally {
       setLoading(false);
     }
@@ -31,11 +31,6 @@ const AuthPage = ({ mode }) => {
         <span className="eyebrow">Inventory intelligence for daily groceries</span>
         <h1>Track stock, expiry dates, and shopping needs from one premium dashboard.</h1>
         <p>Perfect for students, hostels, families, cloud kitchens, and small grocery shops.</p>
-        <div className="hero-metrics">
-          <div><strong>JWT</strong><span>Secure auth</span></div>
-          <div><strong>MongoDB</strong><span>Cloud database</span></div>
-          <div><strong>Alerts</strong><span>Low stock + expiry</span></div>
-        </div>
       </section>
       <section className="auth-card">
         <h2>{isLogin ? "Welcome back" : "Create account"}</h2>
